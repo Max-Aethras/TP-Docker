@@ -77,3 +77,11 @@ docker push aethras/rentalservice:1.0
 ```bash
 docker pull aethras/rentalservice:1.0
 ```
+
+## 🐘 4. Deuxième Microservice (PHP)
+Un service simple en PHP retournant un prénom.
+
+* **Fichier :** `index.php`
+* **Build :** `docker build -t nameservice .`
+* **Run :** `docker run -p 8081:80 nameservice`
+* **URL Docker Hub :** [https://hub.docker.com/r/aethras/nameservice](https://hub.docker.com/r/aethras/nameservice)
