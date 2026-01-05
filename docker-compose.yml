@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  # Le microservice Java
+  java-app:
+    build: ./RentalService
+    ports:
+      - "8080:8080"
+    networks:
+      - rental-network
+    depends_on:
+      - php-service
+
+  # Le microservice PHP [cite: 33, 34]
+  php-service:
+    build: ./name-service
+    # Pas besoin d'exposer le port sur l'hôte, Java y accède via le réseau Docker
+    networks:
+      - rental-network
+
+networks:
+  rental-network:
+    driver: bridge
